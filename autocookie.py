@@ -10,7 +10,6 @@ import time
 import os
 from pynput.keyboard import Key, Listener
 from notifypy import Notify
-from PIL import Image
 lock=False
 click=False
 loop=True

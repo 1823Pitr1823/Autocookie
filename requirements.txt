@@ -1,0 +1,7 @@
+PyQt5
+pyautogui
+pynput
+notify-py
+
+
+ 
