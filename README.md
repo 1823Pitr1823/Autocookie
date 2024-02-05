@@ -12,4 +12,4 @@ Compatibility Note:
   but most of the times result in error failed to detected monitor.
   For these reasons it is recommended to have installed Xorg when using for browser and running browser with GDK_BACKEND=x11.
   Example:
-     ```GDK_BACKEND=x11 your_browser```
+  ```GDK_BACKEND=x11 your_browser```
