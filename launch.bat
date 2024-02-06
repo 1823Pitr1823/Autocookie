@@ -1,2 +1,2 @@
-source venv/bin/activate.bat
+CALL venv/bin/activate.bat
 python autocookie.py

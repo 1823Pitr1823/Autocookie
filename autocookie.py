@@ -18,7 +18,7 @@ def notify(TEXT,TOGGLE):
     notifier= Notify()
     notifier.title="AutoCookie"
     notifier.message=TEXT+str(TOGGLE).replace("True","ENABLED").replace("False","DISABLED")
-    notifier.icon="autocookie_icon.ico"
+    notifier.icon="cookie.png"
     notifier.send()
 
 #SAFETY LOCK TOGGLE
@@ -64,13 +64,15 @@ def on_release(key):
         #CHECK IF KEYPRESSED IS BINDING KEY =>TOGGLE
         if key.char == 'c':
             if click == False:
-                click = True
-                not_t = threading.Thread(target=notify, args=("AutoClick: ",click)) 
-                not_t.start() #THREAD START
+                if lock == False:
+                    click = True
+                    not_t = threading.Thread(target=notify, args=("AutoClick: ",click)) 
+                    not_t.start() #THREAD START
             else:
-                click = False 
-                not_t = threading.Thread(target=notify,args=("AutoClick: ",click)) 
-                not_t.start()  #THREAD START
+                if lock == False:
+                    click = False 
+                    not_t = threading.Thread(target=notify,args=("AutoClick: ",click)) 
+                    not_t.start()  #THREAD START
     except:
         pass
 
@@ -78,7 +80,7 @@ def on_release(key):
 #SYSTEM TRAY DROPDOWN FOR LOCK TOGGLE AND APP EXIT
 
 
-#SYSTEM TRAY AND APP
+#SYSTEM TRAY AND APP LOOP[NOTE ENTIRE THREAD GETS BLOCKED]
 def init_tray():
     global lock
     tray_provider = QApplication([]) 
@@ -103,10 +105,10 @@ def main():
     global notifier
     global click
     global loop
-    #LOWERS PYAUTOGUI DELAY
     listener = Listener(on_press=on_press,on_release=on_release)
     listener.start()
     clicker_t=threading.Thread(target=clicker_loop,args=(0.01,)).start()
+    #LOWERS PYAUTOGUI DELAY =>ALLOWS FAST CLICKING
     pyautogui.PAUSE = 0.0001
     init_tray()
     loop=False
