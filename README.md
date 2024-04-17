@@ -6,7 +6,14 @@
   Windows
   Linux
   
-## Compatibility Note:
+## Requirements
+  [Python](https://www.python.org/)
+
+## Usage
+  Run launch file ".bat" for Windows ".sh" for linux.
+  Activation key is "C", key can be locked using system tray digalog "Lock" to prevent accidental activation.
+  
+## Linux Compatibility Note:
   If you are running app on Wayland the keypress detection might not work for you unless key pressed over XWayland windows.
   This is primarily caused by way wayland treats listening to keystrokes due to security reasons. Running under root or with elevated privileges might resolve the issues,
   but most of the times result in error failed to detected monitor.
