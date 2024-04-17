@@ -10,6 +10,16 @@
 ## Requirements
   [Python](https://www.python.org/)
 
+## Install
+### Windows
+  1. Install [Python](https://www.python.org/), in setup make sure to install pip as well.
+  2. Start venv_install.bat script
+  3. Run launch.bat
+### Linux
+  1. Install python using your package manager if not installed by default
+  2. Start venv_install.sh
+  3. Run launch.sh
+  
 ## Usage
   Run launch file ".bat" for Windows ".sh" for linux.
   Activation key is "C", key can be locked using system tray digalog "Lock" to prevent accidental activation.
