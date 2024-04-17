@@ -18,7 +18,7 @@
   If you are running app on Wayland the keypress detection might not work for you unless key pressed over XWayland windows.
   This is primarily caused by way the wayland treats key capture. Running under root or with elevated privileges might resolve the issue,
   but most of the times result in error "failed to detected monitor".
-  For these reasons it is recommended to run apps under XWayland using "GDK_BACKEND=x11".
+  For these reasons it is recommended to run apps under XWayland.
   
-  Example: `GDK_BACKEND=x11 your_browser`
+  Example for browser using GTK: `GDK_BACKEND=x11 your_browser`
   
